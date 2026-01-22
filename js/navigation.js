@@ -19,26 +19,32 @@ document.addEventListener('DOMContentLoaded', () => {
      * Initialize the navigation system
      */
     const initNavigation = () => {
-        // Toggle navigation when clicking the logo
+        // Toggle navigation when clicking the logo with smooth animation
         if (logoTrigger) {
             logoTrigger.addEventListener('click', (e) => {
                 e.preventDefault();
-                offCanvasNav.classList.toggle('active');
-                offCanvasOverlay.classList.toggle('active');
-                body.classList.toggle('no-scroll');
-                logoTrigger.classList.toggle('active');
+                
+                // Use requestAnimationFrame for smoother animation
+                requestAnimationFrame(() => {
+                    offCanvasNav.classList.toggle('active');
+                    offCanvasOverlay.classList.toggle('active');
+                    body.classList.toggle('no-scroll');
+                    logoTrigger.classList.toggle('active');
+                });
             });
         }
         
-        // Close when clicking overlay
+        // Close when clicking overlay with smooth animation
         if (offCanvasOverlay) {
             offCanvasOverlay.addEventListener('click', () => {
-                offCanvasNav.classList.remove('active');
-                offCanvasOverlay.classList.remove('active');
-                body.classList.remove('no-scroll');
-                if (logoTrigger) {
-                    logoTrigger.classList.remove('active');
-                }
+                requestAnimationFrame(() => {
+                    offCanvasNav.classList.remove('active');
+                    offCanvasOverlay.classList.remove('active');
+                    body.classList.remove('no-scroll');
+                    if (logoTrigger) {
+                        logoTrigger.classList.remove('active');
+                    }
+                });
             });
         }
         
@@ -189,57 +195,123 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
-// Function to handle section activation
+// Function to handle section activation with smooth transitions
 function activateSection(section) {
-    // Remove active class from all sections
-    document.querySelectorAll('.about-section, .service-section, .brands-section, .contact-section').forEach(s => {
-        s.classList.remove('active');
-    });
+    const allSections = document.querySelectorAll('.about-section, .service-section, .brands-section, .contact-section');
     
-    // Add active class to the selected section
-    if (section) {
-        section.classList.add('active');
-        document.body.classList.add('section-active');
-    } else {
+    // If closing all sections
+    if (!section) {
+        allSections.forEach(s => {
+            s.classList.remove('active');
+        });
         document.body.classList.remove('section-active');
+        return;
+    }
+    
+    // If opening a new section
+    const currentlyActive = document.querySelector('.about-section.active, .service-section.active, .brands-section.active, .contact-section.active');
+    
+    if (currentlyActive && currentlyActive !== section) {
+        // Smooth crossfade between sections
+        currentlyActive.style.opacity = '0';
+        currentlyActive.style.pointerEvents = 'none';
+        
+        setTimeout(() => {
+            currentlyActive.classList.remove('active');
+            currentlyActive.style.opacity = '';
+            currentlyActive.style.pointerEvents = '';
+            
+            // Activate new section with slight delay for smoother feel
+            requestAnimationFrame(() => {
+                section.classList.add('active');
+                document.body.classList.add('section-active');
+            });
+        }, 300);
+    } else if (!currentlyActive) {
+        // No section is active, just open the new one
+        requestAnimationFrame(() => {
+            section.classList.add('active');
+            document.body.classList.add('section-active');
+        });
     }
 }
 
-// Update event listeners to use the new function
+// Update event listeners to use the new function with smooth transitions
 document.querySelectorAll('.off-canvas-menu-item, .contact-btn').forEach(item => {
     item.addEventListener('click', function() {
         const section = this.dataset.section;
-        if (section === 'home') {
-            activateSection(null);
-        } else if (section === 'person') {
-            activateSection(document.querySelector('.about-section'));
-        } else if (section === 'service') {
-            activateSection(document.querySelector('.service-section'));
-        } else if (section === 'brands') {
-            activateSection(document.querySelector('.brands-section'));
-        } else if (section === 'contact') {
-            activateSection(document.querySelector('.contact-section'));
+        const offCanvasNav = document.getElementById('offCanvasNav');
+        const offCanvasOverlay = document.getElementById('offCanvasOverlay');
+        const logoTrigger = document.querySelector('.logo-container');
+        
+        // Close menu first with smooth animation
+        if (offCanvasNav && offCanvasNav.classList.contains('active')) {
+            requestAnimationFrame(() => {
+                offCanvasNav.classList.remove('active');
+                if (offCanvasOverlay) offCanvasOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                if (logoTrigger) logoTrigger.classList.remove('active');
+            });
+            
+            // Wait for menu close animation then open section
+            setTimeout(() => {
+                if (section === 'home') {
+                    activateSection(null);
+                } else if (section === 'person') {
+                    activateSection(document.querySelector('.about-section'));
+                } else if (section === 'service') {
+                    activateSection(document.querySelector('.service-section'));
+                } else if (section === 'brands') {
+                    activateSection(document.querySelector('.brands-section'));
+                } else if (section === 'contact') {
+                    activateSection(document.querySelector('.contact-section'));
+                }
+            }, 350);
+        } else {
+            // Menu already closed, open section directly
+            if (section === 'home') {
+                activateSection(null);
+            } else if (section === 'person') {
+                activateSection(document.querySelector('.about-section'));
+            } else if (section === 'service') {
+                activateSection(document.querySelector('.service-section'));
+            } else if (section === 'brands') {
+                activateSection(document.querySelector('.brands-section'));
+            } else if (section === 'contact') {
+                activateSection(document.querySelector('.contact-section'));
+            }
         }
     });
 });
 
-// Update close button handlers
+// Update close button handlers with smooth transitions
 document.querySelectorAll('.close-about, .close-service, .close-brands, .close-contact').forEach(button => {
     button.addEventListener('click', function() {
-        // Stop video if it's playing
+        // Stop video if it's playing with fade out
         const video = document.getElementById('collections-video');
         if (video) {
-            video.pause();
-            video.currentTime = 0;
-            const playButton = document.querySelector('.video-play-btn');
-            if (playButton) {
-                playButton.innerHTML = '<i class="fas fa-play"></i>';
-            }
-            const videoWrapper = document.querySelector('.luxury-video-wrapper');
-            if (videoWrapper) {
-                videoWrapper.classList.remove('video-playing');
-            }
+            // Fade out video smoothly
+            video.style.transition = 'opacity 0.3s ease';
+            video.style.opacity = '0';
+            
+            setTimeout(() => {
+                video.pause();
+                video.currentTime = 0;
+                video.style.opacity = '';
+                video.style.transition = '';
+                
+                const playButton = document.querySelector('.video-play-btn');
+                if (playButton) {
+                    playButton.innerHTML = '<i class="fas fa-play"></i>';
+                }
+                const videoWrapper = document.querySelector('.luxury-video-wrapper');
+                if (videoWrapper) {
+                    videoWrapper.classList.remove('video-playing');
+                }
+            }, 300);
         }
+        
+        // Smooth section close
         activateSection(null);
     });
 });

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Core JavaScript for Luxury Interior Design Website
  * High-performance interactions with mobile-first approach
  * Uses advanced animation techniques and performance optimizations
@@ -757,8 +757,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Get the new language
         const newLang = button.dataset.lang;
 
-        // Apply translations with transition animation
-        applyLanguage(newLang, true);
+        // Apply translations without transition animation
+        applyLanguage(newLang, false);
     };
     
     /**

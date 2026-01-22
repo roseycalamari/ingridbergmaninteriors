@@ -1,4 +1,4 @@
-﻿/* Touch device enhancements */
+/* Touch device enhancements */
 @media (hover: none) {
     .portrait-bw-left,
     .portrait-bw-right {
@@ -60,13 +60,13 @@
     --nav-text: #fdfdfd;
     --nav-accent: #d1cabc;
     
-    /* Optimized Transition Variables for Better Performance */
-    --transition-ultra-slow: 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-    --transition-slow: 0.9s cubic-bezier(0.33, 1, 0.68, 1);
-    --transition-medium: 0.6s cubic-bezier(0.32, 0.72, 0, 1);
-    --transition-fast: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --transition-micro: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --transition-page: 1.0s cubic-bezier(0.19, 1, 0.22, 1); /* Optimized for page transitions */
+    /* Luxury Transition Variables - Silky Smooth */
+    --transition-ultra-slow: 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-slow: 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+    --transition-medium: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+    --transition-fast: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-micro: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-page: 0.8s cubic-bezier(0.33, 1, 0.68, 1); /* Elegant page transitions */
     
     /* Layout Variables - Updated for Responsive Design */
     --header-height: 4.5rem; /* Reduced from 5.625rem */
@@ -226,6 +226,9 @@ img {
     background-color: var(--color-secondary); /* Brown background from menu */
     display: flex;
     align-items: center;
+    transition: opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+                visibility 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: opacity, visibility;
     justify-content: center;
     z-index: var(--z-loader);
     transition: opacity 0.7s ease-out, visibility 0.7s;
@@ -631,7 +634,7 @@ body.loaded .logo-placeholder {
 }
 
 .credit-text {
-    font-size: 0.65rem;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.6);
     letter-spacing: 0.5px;
     font-weight: 300;
@@ -639,7 +642,7 @@ body.loaded .logo-placeholder {
 }
 
 .credit-logo {
-    height: 14px;
+    height: 32px;
     width: auto;
     filter: brightness(0.9);
     transition: filter 0.3s ease;
@@ -1222,6 +1225,15 @@ body.loaded .logo-placeholder {
     transform: scale(1);
 }
 
+/* Hide service background on mobile even when active */
+@media (max-width: 767px) {
+    .service-section.active .service-background {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        display: none !important;
+    }
+}
+
 .about-content,
 .service-content,
 .brands-content,
@@ -1381,12 +1393,12 @@ body.loaded .logo-placeholder {
 
 .service-info {
     margin: clamp(2rem, 5vw, 4rem) 0; /* Responsive margin */
-    background-color: rgba(253, 253, 253, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: var(--radius-large);
-    padding: clamp(1.5rem, 4vw, 3rem); /* Responsive padding */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 0;
+    padding: 0; /* Remove padding */
+    border: none;
 }
 
 .service-subtitle {
@@ -1406,14 +1418,17 @@ body.loaded .logo-placeholder {
     text-align: center;
     padding: clamp(1.5rem, 4vw, 2.5rem);
     border-radius: var(--radius-medium);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
     transition: transform var(--transition-medium), box-shadow var(--transition-medium);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .service-card:hover {
     transform: translateY(-0.5rem);
     box-shadow: var(--shadow-strong);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .service-card h3 {
@@ -1545,9 +1560,9 @@ body.loaded .logo-placeholder {
 .brand-item {
     width: 100%;
     height: auto;
-    background-color: rgba(253, 253, 253, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
     border-radius: var(--radius-medium);
     display: flex;
     flex-direction: column;
@@ -1557,7 +1572,7 @@ body.loaded .logo-placeholder {
     transition: transform var(--transition-medium),
                 box-shadow var(--transition-medium),
                 background-color var(--transition-medium);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     gap: 1rem;
     overflow: hidden;
 }
@@ -1565,7 +1580,7 @@ body.loaded .logo-placeholder {
 .brand-item:hover {
     transform: translateY(-0.625rem);
     box-shadow: var(--shadow-medium);
-    background-color: rgba(253, 253, 253, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .brand-image {
@@ -1593,7 +1608,17 @@ body.loaded .logo-placeholder {
     font-weight: 300;
     text-align: center;
     color: var(--color-background);
-    margin: 0;
+    margin: 0 0 0.75rem 0;
+}
+
+.brand-description {
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 1.25rem 0;
+    line-height: 1.5;
+    font-style: italic;
 }
 
 .brand-link {
@@ -2226,8 +2251,10 @@ body.loaded .logo-placeholder {
     }
     
     .service-info {
-        padding: 1.5rem;
+        padding: 0;
         margin: 2rem 0;
+        background: transparent;
+        border: none;
     }
     
     /* Move footer up to avoid hamburger button */
@@ -2512,6 +2539,182 @@ body.section-active .header .logo-container {
 
 .brands-category {
     margin-bottom: clamp(3rem, 6vw, 5rem);
+    position: relative;
+}
+
+/* High blur container behind brand cards - Desktop only */
+@media (min-width: 1200px) {
+    /* Full screen width for all content sections */
+    .brands-content,
+    .service-content,
+    .about-content,
+    .contact-content {
+        max-width: 100vw !important;
+        width: 100vw !important;
+        padding: 4rem 5rem !important;
+    }
+    
+    .brands-category {
+        background: rgba(253, 253, 253, 0.08);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border-radius: 28px;
+        padding: 5rem 5.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .brands-category h3 {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 3.5rem;
+    }
+    
+    .brands-list {
+        position: relative;
+        z-index: 1;
+        gap: 3.5rem;
+        margin-top: 2.5rem;
+        padding: 0;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .brand-item {
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(60px) !important;
+        -webkit-backdrop-filter: blur(60px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .brand-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Service cards container - matching brands layout */
+    .service-info {
+        background: rgba(253, 253, 253, 0.08);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border-radius: 28px;
+        padding: 5rem 5.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .service-subtitle {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 3.5rem;
+    }
+    
+    .service-cards-container {
+        position: relative;
+        z-index: 1;
+        gap: 3.5rem;
+        margin-top: 2.5rem;
+        padding: 0;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    /* Service cards - dark blur matching brand cards */
+    .service-card {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(60px) !important;
+        -webkit-backdrop-filter: blur(60px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        margin: 0;
+    }
+    
+    .service-card:hover {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+    }
+    
+    /* Project cards - dark blur matching brand and service cards */
+    .project-card {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(60px) !important;
+        -webkit-backdrop-filter: blur(60px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .project-card:hover {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+    }
+    
+    /* About section - blurred container matching brands and service */
+    .about-grid {
+        background: rgba(253, 253, 253, 0.08);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border-radius: 28px;
+        padding: 5rem 5.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: clamp(1.5rem, 5vw, 4rem);
+        align-items: center;
+    }
+    
+    .about-text {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Contact section - blurred container matching brands and service */
+    .contact-info {
+        background: rgba(253, 253, 253, 0.08);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border-radius: 28px;
+        padding: 5rem 5.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 100%;
+        margin: 2.5rem 0 0 0;
+    }
+    
+    .contact-header {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 3.5rem;
+    }
+    
+    .contact-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.5rem;
+        margin-top: 2.5rem;
+        padding: 0;
+    }
+    
+    /* Contact items - dark blur matching other cards */
+    .contact-item {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(60px) !important;
+        -webkit-backdrop-filter: blur(60px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .contact-item:hover {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+    }
 }
 
 .brands-category h3 {
@@ -2728,10 +2931,13 @@ body.section-active .header .logo-container {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -2823,6 +3029,7 @@ body.section-active .header .logo-container {
 .project-card:hover {
     transform: translateY(-0.5rem);
     box-shadow: var(--shadow-strong);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .project-description {
@@ -5429,12 +5636,15 @@ body.section-active .header .logo-container {
         width: 100%;
         padding: 1.2rem 1rem 1.5rem 1rem;
         margin-bottom: 1.5rem;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         border-radius: 16px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: rgba(255,255,255,0.13);
+        background: rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(50px) !important;
+        -webkit-backdrop-filter: blur(50px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
     }
     .project-image {
         width: 100%;
@@ -5551,6 +5761,15 @@ body.section-active .header .logo-container {
     box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
     background: rgba(255,255,255,0.10) !important;
   }
+  
+  /* Brand items - heavy blur with dark background for maximum separation */
+  .brand-item {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(50px) !important;
+    -webkit-backdrop-filter: blur(50px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  }
   .service-card h3,
   .brand-name,
   .contact-item h3 {
@@ -5645,6 +5864,15 @@ body.section-active .header .logo-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+  }
+  
+  /* Brand items - heavy blur with dark background for maximum separation */
+  .brand-item {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(50px) !important;
+    -webkit-backdrop-filter: blur(50px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
   }
   /* Headings */
   .about-text h2,
@@ -6316,7 +6544,7 @@ body.section-active .header .logo-container {
   .service-content,
   .brands-content,
   .contact-content {
-    padding: 2rem 1.5rem 2.5rem !important;
+    padding: 2.5rem 1.8rem 3rem !important;
     border-radius: 0 !important;
     margin: 0 auto !important;
     width: 100% !important;
@@ -6332,6 +6560,28 @@ body.section-active .header .logo-container {
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
     max-height: 92vh !important;
+  }
+  
+  /* Service section - match About section appearance on mobile */
+  .service-section {
+    background: linear-gradient(
+        135deg,
+        rgba(99, 94, 83, 0.98) 0%,
+        rgba(74, 70, 64, 0.99) 100%
+    ) !important;
+  }
+  
+  /* Hide service background image on mobile */
+  .service-background {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: none !important;
+  }
+  
+  /* Service content specific improvements */
+  .service-content {
+    padding: 2.8rem 2rem 3.5rem !important;
+    max-width: 100% !important;
   }
 
   /* Premium typography with better spacing */
@@ -6359,12 +6609,19 @@ body.section-active .header .logo-container {
   .brands-header h2,
   .contact-header h2,
   .about-text h2 {
-    font-size: 1.7rem !important;
-    margin-bottom: 1.2rem !important;
+    font-size: 1.9rem !important;
+    margin-bottom: 1.5rem !important;
     text-align: center !important;
     letter-spacing: 1.5px !important;
     line-height: 1.35 !important;
     font-weight: 300 !important;
+  }
+  
+  /* Service header specific improvements */
+  .service-header {
+    margin-bottom: 2.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   
   /* Section descriptions with breathing room */
@@ -6372,13 +6629,19 @@ body.section-active .header .logo-container {
   .brands-header p,
   .contact-header p,
   .about-title {
-    font-size: 1rem !important;
-    margin-bottom: 2rem !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 2.5rem !important;
     text-align: center !important;
     max-width: 100% !important;
-    line-height: 1.7 !important;
+    line-height: 1.75 !important;
     opacity: 0.9 !important;
     font-weight: 300 !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  /* Service header description specific */
+  .service-header p {
+    margin-bottom: 3rem !important;
   }
   
   /* Clean card styling - minimal layers */
@@ -6386,14 +6649,14 @@ body.section-active .header .logo-container {
   .brand-item,
   .contact-item,
   .project-card {
-    padding: 1.5rem 1.2rem !important;
-    border-radius: 12px !important;
-    margin-bottom: 1.2rem !important;
-    background: rgba(255, 255, 255, 0.06) !important;
+    padding: 2rem 1.8rem !important;
+    border-radius: 16px !important;
+    margin-bottom: 1.8rem !important;
+    background: rgba(255, 255, 255, 0.08) !important;
     box-shadow: none !important;
     border: none !important;
     width: 100% !important;
-    max-width: 380px !important;
+    max-width: 420px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     display: flex !important;
@@ -6402,16 +6665,57 @@ body.section-active .header .logo-container {
     text-align: center !important;
   }
   
+  /* Brand items - heavy blur with dark background for maximum separation */
+  .brand-item {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(50px) !important;
+    -webkit-backdrop-filter: blur(50px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  /* Project cards - dark blur matching brand cards */
+  .project-card {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(50px) !important;
+    -webkit-backdrop-filter: blur(50px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  /* Brand description mobile styling */
+  .brand-description {
+    font-size: 0.9rem !important;
+    margin: 0.5rem 0 1rem 0 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    line-height: 1.5 !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+  }
+  
+  /* Service card specific improvements */
+  .service-card {
+    padding: 2.2rem 2rem !important;
+    max-width: 450px !important;
+    margin-bottom: 2rem !important;
+  }
+  
   /* Card headings */
   .service-card h3,
   .brand-name,
   .contact-item h3,
   .project-title {
-    font-size: 1.15rem !important;
-    margin-bottom: 0.8rem !important;
-    line-height: 1.35 !important;
-    letter-spacing: 0.5px !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.8px !important;
     font-weight: 300 !important;
+  }
+  
+  /* Service card heading specific */
+  .service-card h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 1.2rem !important;
   }
   
   /* Card text with proper spacing */
@@ -6419,21 +6723,70 @@ body.section-active .header .logo-container {
   .contact-item p,
   .project-location,
   .about-paragraph {
-    font-size: 0.95rem !important;
-    line-height: 1.7 !important;
+    font-size: 1rem !important;
+    line-height: 1.75 !important;
     margin-bottom: 0.8rem !important;
     padding: 0 !important;
     opacity: 0.9 !important;
     font-weight: 300 !important;
   }
   
+  /* Service card text specific */
+  .service-card p {
+    font-size: 1.05rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 0 !important;
+  }
+  
   /* Service cards container spacing */
   .service-cards-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: 1rem !important;
+    gap: 1.5rem !important;
     width: 100% !important;
-    margin: 1.5rem 0 !important;
+    max-width: 100% !important;
+    margin: 2rem 0 3rem !important;
+    padding: 0 !important;
+  }
+  
+  /* Service info section - no background container */
+  .service-info {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  /* Service subtitle */
+  .service-subtitle {
+    font-size: 1.15rem !important;
+    margin-bottom: 3rem !important;
+    text-align: center !important;
+    letter-spacing: 0.8px !important;
+    font-weight: 300 !important;
+  }
+  
+  /* Service actions button */
+  .service-actions {
+    margin-top: 3.5rem !important;
+    margin-bottom: 2rem !important;
+    width: 100% !important;
+    max-width: 450px !important;
+  }
+  
+  .service-back-home-btn {
+    width: 100% !important;
+    padding: 1.1rem 2rem !important;
+    font-size: 1rem !important;
+    letter-spacing: 1px !important;
+    border-radius: 12px !important;
   }
   
   /* Brands list spacing */
@@ -6494,9 +6847,69 @@ body.section-active .header .logo-container {
   .projects-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 1.5rem !important;
+    gap: 2rem !important;
     width: 100% !important;
-    margin: 1rem 0 !important;
+    max-width: 100% !important;
+    margin: 2rem 0 3rem !important;
+    padding: 0 !important;
+  }
+  
+  /* Ingrid projects section within service */
+  .ingrid-projects-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 3rem 0 2rem !important;
+    padding: 0 !important;
+  }
+  
+  .ingrid-projects-section h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 2.5rem !important;
+    text-align: center !important;
+    letter-spacing: 1px !important;
+    font-weight: 300 !important;
+  }
+  
+  /* Project cards in service section */
+  .projects-list .project-card {
+    max-width: 450px !important;
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .project-image {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    border-radius: 12px 12px 0 0 !important;
+  }
+  
+  .project-info {
+    padding: 1.8rem 1.5rem 2rem !important;
+  }
+  
+  .project-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .project-location {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .project-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+    width: 100% !important;
+  }
+  
+  .project-btn {
+    width: 100% !important;
+    padding: 0.9rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    border-radius: 10px !important;
   }
 
   /* All buttons consistency */
@@ -7589,11 +8002,11 @@ body.section-active .header .logo-container {
   }
   
   .credit-text {
-    font-size: 0.6rem !important;
+    font-size: 0.9rem !important;
   }
   
   .credit-logo {
-    height: 12px !important;
+    height: 28px !important;
   }
 }
 
@@ -7956,5 +8369,435 @@ body.section-active .header .logo-container {
   
   .off-canvas-menu-item:active {
     background: rgba(255, 255, 255, 0.15) !important;
+  }
+}
+
+/* ===== LUXURY SMOOTH TRANSITIONS ===== */
+/* Ultra-smooth transitions for a premium experience */
+
+/* Define luxury easing curves */
+:root {
+  --ease-luxury: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-smooth-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-smooth-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --ease-smooth-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --transition-fast: 0.2s;
+  --transition-normal: 0.4s;
+  --transition-slow: 0.6s;
+  --transition-slower: 0.8s;
+}
+
+/* Section overlays - silky smooth transitions */
+.about-section,
+.service-section,
+.brands-section,
+.contact-section {
+  transition: opacity 0.8s var(--ease-smooth-out),
+              visibility 0.8s var(--ease-smooth-out) !important;
+  will-change: opacity, visibility;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Background images - graceful scale and fade */
+.about-background,
+.service-background,
+.brands-background,
+.contact-background {
+  transition: opacity 1s var(--ease-smooth-out),
+              transform 1.2s var(--ease-smooth-out) !important;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform: scale(1.03);
+}
+
+.about-section.active .about-background,
+.service-section.active .service-background,
+.brands-section.active .brands-background,
+.contact-section.active .contact-background {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Content containers - elegant slide up */
+.about-content,
+.service-content,
+.brands-content,
+.contact-content {
+  transition: opacity 0.7s var(--ease-smooth-out) 0.15s,
+              transform 0.7s var(--ease-smooth-out) 0.15s !important;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.about-section.active .about-content,
+.service-section.active .service-content,
+.brands-section.active .brands-content,
+.contact-section.active .contact-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Close buttons - smooth appearance */
+.close-about,
+.close-service,
+.close-brands,
+.close-contact {
+  transition: opacity 0.5s var(--ease-smooth-out) 0.3s,
+              transform 0.5s var(--ease-elastic) 0.3s,
+              background-color 0.3s var(--ease-luxury),
+              color 0.3s var(--ease-luxury) !important;
+  will-change: opacity, transform;
+}
+
+.close-about:hover,
+.close-service:hover,
+.close-brands:hover,
+.close-contact:hover {
+  transition: transform 0.4s var(--ease-elastic),
+              background-color 0.3s var(--ease-luxury),
+              color 0.3s var(--ease-luxury) !important;
+}
+
+/* Off-canvas navigation - luxurious slide */
+.off-canvas-navigation {
+  transition: transform 0.6s var(--ease-smooth-out),
+              visibility 0s linear 0.6s !important;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.off-canvas-navigation.active {
+  transition: transform 0.6s var(--ease-smooth-out),
+              visibility 0s linear 0s !important;
+}
+
+/* Off-canvas overlay - soft fade */
+.off-canvas-overlay {
+  transition: opacity 0.5s var(--ease-smooth-out),
+              visibility 0s linear 0.5s !important;
+}
+
+.off-canvas-overlay.active {
+  transition: opacity 0.5s var(--ease-smooth-out),
+              visibility 0s linear 0s !important;
+}
+
+/* Menu items - staggered elegant entrance */
+.off-canvas-menu-item {
+  transition: transform 0.5s var(--ease-smooth-out),
+              opacity 0.5s var(--ease-smooth-out),
+              background-color 0.3s var(--ease-luxury),
+              color 0.3s var(--ease-luxury) !important;
+  will-change: transform, opacity;
+}
+
+/* Gallery popup - cinematic feel */
+.gallery-popup {
+  transition: opacity 0.6s var(--ease-smooth-out),
+              visibility 0.6s var(--ease-smooth-out) !important;
+  will-change: opacity, visibility;
+}
+
+.gallery-popup.active {
+  transition: opacity 0.6s var(--ease-smooth-out),
+              visibility 0s linear 0s !important;
+}
+
+.gallery-container {
+  transition: transform 0.7s var(--ease-smooth-out),
+              opacity 0.6s var(--ease-smooth-out) !important;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.gallery-popup.active .gallery-container {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Gallery images - smooth crossfade */
+.gallery-main-image {
+  transition: opacity 0.5s var(--ease-smooth-out),
+              transform 0.5s var(--ease-smooth-out) !important;
+  will-change: opacity, transform;
+}
+
+/* Gallery thumbnails - subtle hover */
+.gallery-thumbnail {
+  transition: transform 0.3s var(--ease-luxury),
+              opacity 0.3s var(--ease-luxury),
+              border-color 0.3s var(--ease-luxury) !important;
+}
+
+.gallery-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* Cards - refined hover states */
+.service-card,
+.brand-item,
+.contact-item,
+.project-card {
+  transition: transform 0.5s var(--ease-smooth-out),
+              box-shadow 0.5s var(--ease-smooth-out),
+              background-color 0.4s var(--ease-luxury) !important;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.service-card:hover,
+.brand-item:hover,
+.contact-item:hover,
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Buttons and interactive elements */
+.btn,
+button,
+.project-btn,
+.view-gallery-btn,
+.read-about-btn {
+  transition: transform 0.3s var(--ease-elastic),
+              background-color 0.3s var(--ease-luxury),
+              color 0.3s var(--ease-luxury),
+              box-shadow 0.3s var(--ease-luxury),
+              border-color 0.3s var(--ease-luxury) !important;
+  will-change: transform;
+}
+
+.btn:hover,
+button:hover,
+.project-btn:hover,
+.view-gallery-btn:hover,
+.read-about-btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active,
+button:active,
+.project-btn:active,
+.view-gallery-btn:active,
+.read-about-btn:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s !important;
+}
+
+/* Logo and navigation triggers */
+.logo-container,
+.mobile-logo-container,
+.mobile-logo {
+  transition: transform 0.4s var(--ease-elastic),
+              opacity 0.3s var(--ease-luxury) !important;
+  will-change: transform;
+}
+
+.logo-container:hover,
+.mobile-logo-container:hover,
+.mobile-logo:hover {
+  transform: scale(1.03);
+}
+
+/* Social links - playful hover */
+.social-link,
+.off-canvas-social,
+.footer-social {
+  transition: transform 0.3s var(--ease-elastic),
+              color 0.3s var(--ease-luxury),
+              background-color 0.3s var(--ease-luxury) !important;
+}
+
+.social-link:hover,
+.off-canvas-social:hover,
+.footer-social:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Images - smooth load and hover */
+img {
+  transition: opacity 0.5s var(--ease-smooth-out),
+              transform 0.5s var(--ease-smooth-out) !important;
+}
+
+.about-image img,
+.brand-image,
+.project-image {
+  transition: transform 0.6s var(--ease-smooth-out),
+              filter 0.6s var(--ease-smooth-out) !important;
+  will-change: transform;
+}
+
+.about-image:hover img,
+.brand-item:hover .brand-image,
+.project-card:hover .project-image {
+  transform: scale(1.03);
+}
+
+/* Language switcher - elegant transition */
+.language-btn {
+  transition: color 0.3s var(--ease-luxury),
+              background-color 0.3s var(--ease-luxury),
+              transform 0.3s var(--ease-elastic) !important;
+}
+
+.language-btn:hover {
+  transform: scale(1.05);
+}
+
+.language-btn.active {
+  transition: all 0.4s var(--ease-smooth-out) !important;
+}
+
+/* Scrollbar - smooth appearance */
+.about-content::-webkit-scrollbar-thumb,
+.service-content::-webkit-scrollbar-thumb,
+.brands-content::-webkit-scrollbar-thumb,
+.contact-content::-webkit-scrollbar-thumb {
+  transition: background-color 0.3s var(--ease-luxury) !important;
+}
+
+/* Mobile homepage - refined animations */
+.mobile-homepage {
+  transition: opacity 0.6s var(--ease-smooth-out) !important;
+}
+
+.mobile-logo-container {
+  transition: transform 0.5s var(--ease-smooth-out),
+              box-shadow 0.5s var(--ease-smooth-out) !important;
+}
+
+/* Footer elements */
+.footer,
+.footer-content {
+  transition: opacity 0.4s var(--ease-smooth-out),
+              transform 0.4s var(--ease-smooth-out) !important;
+}
+
+/* Project details - smooth transitions */
+.project-details-popup {
+  transition: opacity 0.6s var(--ease-smooth-out),
+              visibility 0.6s var(--ease-smooth-out) !important;
+}
+
+.project-details-container {
+  transition: transform 0.6s var(--ease-smooth-out),
+              opacity 0.5s var(--ease-smooth-out) !important;
+}
+
+/* Navigation arrows - refined movement */
+.gallery-nav-arrow,
+.project-nav-arrow {
+  transition: transform 0.3s var(--ease-elastic),
+              background-color 0.3s var(--ease-luxury),
+              opacity 0.3s var(--ease-luxury) !important;
+}
+
+.gallery-nav-arrow:hover,
+.project-nav-arrow:hover {
+  transform: scale(1.15);
+}
+
+/* Video wrapper */
+.luxury-video-wrapper {
+  transition: transform 0.5s var(--ease-smooth-out) !important;
+}
+
+.video-play-btn {
+  transition: transform 0.4s var(--ease-elastic),
+              background-color 0.3s var(--ease-luxury),
+              opacity 0.3s var(--ease-luxury) !important;
+}
+
+.video-play-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Form inputs - refined focus states */
+input,
+textarea,
+select {
+  transition: border-color 0.3s var(--ease-luxury),
+              box-shadow 0.3s var(--ease-luxury),
+              background-color 0.3s var(--ease-luxury) !important;
+}
+
+/* Page transition overlay */
+.page-transition-overlay {
+  transition: opacity 0.6s var(--ease-smooth-out),
+              transform 0.6s var(--ease-smooth-out),
+              visibility 0.6s var(--ease-smooth-out) !important;
+  will-change: opacity, transform;
+}
+
+/* Hamburger menu animation */
+.hamburger-line {
+  transition: transform 0.4s var(--ease-smooth-out),
+              opacity 0.3s var(--ease-luxury) !important;
+}
+
+/* Reduced motion preference - respect user settings */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Mobile optimizations - slightly faster for responsiveness */
+@media (max-width: 767px) {
+  .about-section,
+  .service-section,
+  .brands-section,
+  .contact-section {
+    transition-duration: 0.6s !important;
+  }
+  
+  .about-content,
+  .service-content,
+  .brands-content,
+  .contact-content {
+    transition-duration: 0.5s !important;
+    transition-delay: 0.1s !important;
+  }
+  
+  .gallery-popup,
+  .gallery-container {
+    transition-duration: 0.5s !important;
+  }
+  
+  .off-canvas-navigation {
+    transition-duration: 0.5s !important;
+  }
+  
+  .service-card,
+  .brand-item,
+  .contact-item,
+  .project-card {
+    transition-duration: 0.4s !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .service-card:active,
+  .brand-item:active,
+  .contact-item:active,
+  .project-card:active {
+    transform: scale(0.98);
+    transition-duration: 0.15s !important;
+  }
+  
+  .btn:active,
+  button:active {
+    transform: scale(0.95);
+    transition-duration: 0.1s !important;
   }
 }

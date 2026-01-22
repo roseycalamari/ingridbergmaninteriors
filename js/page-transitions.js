@@ -48,35 +48,39 @@ document.addEventListener('DOMContentLoaded', () => {
                           targetUrl.includes('brands') ? 'brands' :
                           targetUrl.includes('contact') ? 'contact' : 'home';
         
-        // Optimized transition values
+        // Luxury transition values - smooth and elegant
         let transitionType = 'slide';
-        let transitionDuration = 600; // Reduced from 900ms
-        let transitionEasing = 'cubic-bezier(0.4, 0, 0.2, 1)'; // More responsive easing
+        let transitionDuration = 700; // Balanced for smooth feel
+        let transitionEasing = 'cubic-bezier(0.33, 1, 0.68, 1)'; // Luxury smooth-out easing
         
         // Adjust transition type based on navigation pattern
         if (isHomepageReturn) {
             transitionType = 'fade';
-            transitionDuration = 500; // Reduced from 700ms
+            transitionDuration = 600;
+            transitionEasing = 'cubic-bezier(0.25, 0.1, 0.25, 1)';
         } else if (isBackNavigation) {
             transitionType = 'slideBack';
-            transitionDuration = 550; // Reduced from 850ms
+            transitionDuration = 650;
+            transitionEasing = 'cubic-bezier(0.33, 1, 0.68, 1)';
         } else if (currentPage.type === 'home' && targetType !== 'home') {
             transitionType = 'zoomOut';
-            transitionDuration = 650; // Reduced from 950ms
+            transitionDuration = 750;
+            transitionEasing = 'cubic-bezier(0.25, 0.1, 0.25, 1)';
         } else if (currentPage.type !== 'home' && targetType !== 'home') {
             transitionType = 'crossfade';
-            transitionDuration = 500; // Reduced from 800ms
+            transitionDuration = 600;
+            transitionEasing = 'cubic-bezier(0.65, 0, 0.35, 1)';
         }
         
-        // Further reduce durations for touch devices
+        // Slightly reduce durations for touch devices while keeping smoothness
         if (isTouchDevice) {
-            transitionDuration = Math.floor(transitionDuration * 0.7); // More aggressive reduction
+            transitionDuration = Math.floor(transitionDuration * 0.85);
         }
         
         // Respect reduced motion preferences
         if (prefersReducedMotion) {
             transitionType = 'fade';
-            transitionDuration = 300; // Reduced from 400ms
+            transitionDuration = 200;
             transitionEasing = 'ease';
         }
         
@@ -214,11 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                         window.location.pathname.endsWith('/') || 
                                         window.location.pathname.endsWith('index.html');
                 
-                // Different animation for homepage returns
+                // Different animation for homepage returns - luxurious timing
                 if (isHomepageReturn && (lastTransition === 'fade' || transitionOverlay.classList.contains('fade-transition'))) {
-                    // Fade out for homepage returns
+                    // Fade out for homepage returns - smooth and elegant
                     setTimeout(() => {
                         document.body.classList.add('page-transition-complete');
+                        transitionOverlay.style.transition = 'opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1)';
                         transitionOverlay.style.opacity = '0';
                         
                         // Reset after transition
@@ -228,28 +233,30 @@ document.addEventListener('DOMContentLoaded', () => {
                             transitionOverlay.classList.remove('zoom-transition');
                             transitionOverlay.classList.remove('crossfade-transition');
                             document.body.classList.remove('page-transition-active', 'page-transition-complete');
-                        }, 700);
-                    }, 100);
+                        }, 650);
+                    }, 50);
                 } else if (lastTransition === 'zoomOut') {
-                    // Zoom in animation
+                    // Zoom in animation - cinematic feel
                     transitionOverlay.style.transform = 'translateY(0) scale(1.05)';
                     
                     setTimeout(() => {
                         document.body.classList.add('page-transition-complete');
+                        transitionOverlay.style.transition = 'opacity 0.7s cubic-bezier(0.33, 1, 0.68, 1), transform 0.8s cubic-bezier(0.33, 1, 0.68, 1)';
                         transitionOverlay.style.opacity = '0';
-                        transitionOverlay.style.transform = 'translateY(0) scale(1.1)';
+                        transitionOverlay.style.transform = 'translateY(0) scale(1.08)';
                         
                         // Reset after transition
                         setTimeout(() => {
                             transitionOverlay.style.visibility = 'hidden';
                             transitionOverlay.classList.remove('zoom-transition');
                             document.body.classList.remove('page-transition-active', 'page-transition-complete');
-                        }, 1000);
-                    }, 100);
+                        }, 850);
+                    }, 50);
                 } else if (lastTransition === 'crossfade') {
-                    // Cross-fade animation
+                    // Cross-fade animation - silky smooth
                     setTimeout(() => {
                         document.body.classList.add('page-transition-complete');
+                        transitionOverlay.style.transition = 'opacity 0.65s cubic-bezier(0.33, 1, 0.68, 1)';
                         transitionOverlay.style.opacity = '0';
                         
                         // Reset after transition
@@ -257,15 +264,16 @@ document.addEventListener('DOMContentLoaded', () => {
                             transitionOverlay.style.visibility = 'hidden';
                             transitionOverlay.classList.remove('crossfade-transition');
                             document.body.classList.remove('page-transition-active', 'page-transition-complete');
-                        }, 800);
-                    }, 100);
+                        }, 700);
+                    }, 50);
                 } else {
-                    // Standard slide transition
+                    // Standard slide transition - elegant reveal
                     transitionOverlay.style.transform = 'translateY(0)';
                     
                     // Add complete class to animate out
                     setTimeout(() => {
                         document.body.classList.add('page-transition-complete');
+                        transitionOverlay.style.transition = 'transform 0.7s cubic-bezier(0.33, 1, 0.68, 1), opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1)';
                         transitionOverlay.style.transform = 'translateY(-100%)';
                         transitionOverlay.style.opacity = '0';
                         
@@ -273,8 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         setTimeout(() => {
                             transitionOverlay.style.visibility = 'hidden';
                             document.body.classList.remove('page-transition-active', 'page-transition-complete');
-                        }, 1000);
-                    }, 100);
+                        }, 750);
+                    }, 50);
                 }
             }
             
