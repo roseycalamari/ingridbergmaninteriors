@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ingrid Bergman Interiors</title>
+    <meta name="description" content="Premium interior design solutions. Transform your space with bespoke, elegant design.">
+    <meta name="theme-color" content="#a19c90">
+    
+    <!-- Cache control for fresh content -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo white i.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Performance optimizations -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://player.vimeo.com">
+    
+    <!-- Preload critical assets only -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="images/logo white i.png" as="image" type="image/png">
+    <link rel="preload" href="images/newportrait.jpg" as="image" type="image/jpeg" fetchpriority="high">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font imports - non-blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Icon library - load async -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <span class="loader-i">i</span>
+        </div>
+    </div>
+
+    <!-- Page transition overlay -->
+    <div class="page-transition-overlay"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="images/logo white i.png" alt="Ingrid Bergman Interiors Logo">
+            <div class="close-icon"></div>
+            <div class="nav-hint" data-translate="navHint">click to navigate</div>
+        </div>
+    </header>
+
+    <!-- Mobile Homepage -->
+    <div class="mobile-homepage">
+        <div class="mobile-logo-container">
+            <h1 class="mobile-company-name">Ingrid Bergman Interiors</h1>
+            <img src="images/logo white i.png" alt="Ingrid Bergman Interiors Logo" class="mobile-logo">
+            <div class="nav-hint" data-translate="navHint">click to navigate</div>
+        </div>
+    </div>
+
+    <!-- Main Content: 3-Panel Layout -->
+    <main class="main-content">
+        <!-- Left Panel: The Service -->
+        <section class="section section-left">
+            <div class="section-background" style="background: url('images/the service (2).jpg') center/cover no-repeat;"></div>
+            <div class="hover-overlay"></div>
+            <div class="section-content">
+                <h2 class="section-title" data-translate="serviceTitle">The Service</h2>
+                <button class="expand-btn" id="serviceExpandBtn" data-translate="serviceTitle">The Service</button>
+            </div>
+        </section>
+
+        <!-- Center Portrait Panel -->
+        <div class="portrait-container">
+            <div class="portrait-wrapper">
+                <div class="portrait">
+                    <!-- Colored image underneath -->
+                    <img src="images/newportrait.jpg" alt="Portrait" class="portrait-image">
+                    
+                    <!-- Black and white split effect -->
+                    <div class="portrait-bw-wrapper">
+                        <div class="bw-left"></div>
+                        <div class="bw-right"></div>
+                    </div>
+                    
+                    <button class="about-btn" data-translate="person">The Person</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: The Brands -->
+        <section class="section section-right">
+            <div class="section-background" style="background: url('images/the brands.jpg') center/cover no-repeat;"></div>
+            <div class="hover-overlay"></div>
+            <div class="section-content">
+                <h2 class="section-title" data-translate="brandsTitle">The Brands</h2>
+                <button class="expand-btn" id="brandsExpandBtn" data-translate="brandsTitle">The Brands</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- About Section - Fixed Structure -->
+    <div class="about-section">
+        <div class="about-background" style="background: linear-gradient(135deg, rgba(99, 94, 83, 0.98) 0%, rgba(74, 70, 64, 0.99) 100%), url('assets/images/newportrait.jpg') center/cover no-repeat;"></div>
+        <button class="close-about">
+            <div class="close-icon"></div>
+        </button>
+        <div class="about-content">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/newportrait.jpg" alt="Portrait">
+                </div>
+                <div class="about-text">
+                    <h2 data-translate="aboutTitle">The Person</h2>
+                    <p class="about-title" data-translate="aboutSubtitle">Founder of Ingrid Bergman Interiors</p>
+                    <div class="about-separator"></div>
+                    <p class="about-paragraph" data-translate="aboutParagraph1">Ingrid Bergman embarked on her interior design journey in 2013 after spending two decades in the high-end fashion industry. Her time at a renowned interior design firm in Dubai provided her with invaluable experience, allowing her to master the nuances of the trade.</p>
+                    <p class="about-paragraph" data-translate="aboutParagraph2">Ingrid's extensive background in retail has proven to be a tremendous asset for her clients. This experience has sharpened her impeccable taste in colors and fabrics and honed her ability to source the most exclusive furniture for her agency.</p>
+                    <p class="about-paragraph" data-translate="aboutParagraph3">One of Ingrid's most remarkable qualities is her ability to genuinely listen to her clients, ensuring she delivers the beautiful results they envision. She believes this skill is crucial in building strong client relationships, which lead to inspired, creative design solutions and ultimate client satisfaction.</p>
+                    <p class="about-paragraph" data-translate="aboutParagraph4">Ingrid's work is global, with a diverse portfolio of projects. Her home in Portugal, complete with a breathtaking garden, has been transformed into an exclusive showroom where guests can experience the essence of luxury living.</p>
+                    <p class="about-paragraph" data-translate="aboutParagraph5">Clients are invited to visit the Villa in the Algarve to explore her collections and discuss their projects in this unique and inspiring setting.</p>
+                </div>
+            </div>
+            <div class="about-actions">
+                <button class="about-back-home-btn" data-translate="returnHome">Return to Homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Section - Integrated from the-service.html -->
+    <div class="service-section">
+        <div class="service-background" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/the service (2).jpg') center/cover no-repeat;"></div>
+        <button class="close-service">
+            <div class="close-icon"></div>
+        </button>
+        <div class="service-content">
+            <header class="service-header">
+                <h2 data-translate="serviceTitle">The Service</h2>
+                <p data-translate="serviceDescription">Ingrid Bergman Interiors is a comprehensive residential and commercial furniture agency, offering full-service solutions. We begin by understanding our clients' practical needs and style preferences, ensuring a personalized experience. Our distinctive showroom, located in the heart of the Algarve, serves as an inspirational space where visitors can envision the possibilities of outdoor and indoor living.</p>
+            </header>
+            
+            <section class="service-info">
+                <h3 class="service-subtitle" data-translate="serviceSubtitle">We can assist you with</h3>
+                <div class="service-cards-container">
+                    <div class="service-card">
+                        <h3 data-translate="conceptDesign">Concept & Design</h3>
+                        <p data-translate="conceptDesignDesc">To make a concept and design (with mood & material boards)</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3 data-translate="spacePlanning">Space Planning</h3>
+                        <p data-translate="spacePlanningDesc">To plan your space (floorplans and 3D renders)</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3 data-translate="furnitureSourcing">Furniture Sourcing</h3>
+                        <p data-translate="furnitureSourcingDesc">To source furniture</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3 data-translate="windowTreatment">Window Treatment</h3>
+                        <p data-translate="windowTreatmentDesc">To find the right window treatment</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3 data-translate="lightingPlanning">Lighting Planning</h3>
+                        <p data-translate="lightingPlanningDesc">To plan your lighting</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3 data-translate="accessoriesCarpets">Accessories & Carpets</h3>
+                        <p data-translate="accessoriesCarpetsDesc">To source carpets & home accessories</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ingrid's Projects Section -->
+            <section class="ingrid-projects-section">
+                <div class="brands-category">
+                    <h3 data-translate="projectsTitle">Ingrid's Projects</h3>
+                    <div class="projects-list">
+                        <div class="project-card">
+                            <img src="images/cali project/IBICali2019-30.jpg" alt="California Home Project" class="project-image" loading="lazy">
+                            <div class="project-info">
+                                <h3 class="project-title" data-translate="projectTitle">Transforming of a family home</h3>
+                                <div class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span data-translate="projectLocation">California, US</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="project-btn" data-translate="readAboutProject">
+                                        <i class="fas fa-book-open"></i>Read About the Project
+                                    </button>
+                                    <button class="project-btn gallery-btn">
+                                        <i class="fas fa-images"></i>Gallery
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="images/grill/Grill 445-1.jpg" alt="Restaurant Project" class="project-image" loading="lazy">
+                            <div class="project-info">
+                                <h3 class="project-title" data-translate="restaurantProjectTitle">A Bold New Restaurant Concept with Heart</h3>
+                                <div class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span data-translate="restaurantProjectLocation">Connecticut, US</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="project-btn" data-translate="readAboutProject">
+                                        <i class="fas fa-book-open"></i>Read About the Project
+                                    </button>
+                                    <button class="project-btn gallery-btn">
+                                        <i class="fas fa-images"></i>Gallery
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="images/ibiza/Ibiza 5.jpg" alt="Ibiza Project" class="project-image" loading="lazy">
+                            <div class="project-info">
+                                <h3 class="project-title">Ibiza the magical island</h3>
+                                <div class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Ibiza, Spain</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="project-btn" data-translate="readAboutProject">
+                                        <i class="fas fa-book-open"></i>Read About the Project
+                                    </button>
+                                    <button class="project-btn gallery-btn">
+                                        <i class="fas fa-images"></i>Gallery
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="images/spain/Spain 4.jpg" alt="Spain Project" class="project-image" loading="lazy">
+                            <div class="project-info">
+                                <h3 class="project-title">Apartment upon in the Hills</h3>
+                                <div class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Altea, Spain</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="project-btn" data-translate="readAboutProject">
+                                        <i class="fas fa-book-open"></i>Read About the Project
+                                    </button>
+                                    <button class="project-btn gallery-btn">
+                                        <i class="fas fa-images"></i>Gallery
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="images/project Family mansion coming soon.jpg" alt="Family Mansion Project" class="project-image" loading="lazy">
+                            <div class="project-info">
+                                <h3 class="project-title">Family Mansion – USA</h3>
+                                <div class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Tulsa, Oklahoma, US</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="project-btn family-mansion-btn" data-translate="readAboutProject">
+                                        <i class="fas fa-book-open"></i>Read About the Project
+                                    </button>
+                                    <button class="project-btn gallery-btn" disabled style="opacity: 0.5; cursor: not-allowed;">
+                                        <i class="fas fa-images"></i>Gallery
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="images/project Algarve Villa coming soon.jpg" alt="Algarve Villa Project" class="project-image" loading="lazy">
+                            <div class="project-info">
+                                <h3 class="project-title">Algarve Villa – Portugal</h3>
+                                <div class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Boliqueime, Portugal</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="project-btn algarve-villa-btn" data-translate="readAboutProject">
+                                        <i class="fas fa-book-open"></i>Read About the Project
+                                    </button>
+                                    <button class="project-btn gallery-btn" disabled style="opacity: 0.5; cursor: not-allowed;">
+                                        <i class="fas fa-images"></i>Gallery
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="service-actions">
+                <button class="service-back-home-btn" data-translate="returnHome">Return to Homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Description Popup -->
+    <div class="project-description-popup">
+        <div class="project-description-content">
+            <button class="close-project-description">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-description-grid">
+                <div class="project-description-image">
+                    <img src="images/cali project/IBICali2019-30.jpg" alt="California Home Project" loading="lazy">
+                </div>
+                <div class="project-description-text">
+                    <h3 data-translate="projectTitle">Transforming of a family home</h3>
+                    <p data-translate="projectDescription1">"We recently had the pleasure of transforming a classic traditional American quinta into
+                    a refined, modern sanctuary for a young family with three children. This full-scale
+                    renovation was more than just a makeover—it was a complete reinvention of the space
+                    to align with contemporary living while preserving a warm, welcoming atmosphere.</p>
+                    <p data-translate="projectDescription2">The home was fully gutted to allow for a bold redesign, featuring an open floorplan that
+                    brings in natural light and flow. At the heart of the home stands a stunning, high-end
+                    Italian kitchen—both sleek and functional—paired with a custom-designed bathroom
+                    that exudes luxury and serenity.</p>
+                    <p data-translate="projectDescription3">Throughout the house, we laid elegant fishbone oak flooring, adding texture and
+                    timeless style. A striking fireplace became a central feature, creating a cozy gathering
+                    space for the family. Carefully curated high-end furniture from Eric Kuster, paired with
+                    limited edition art and thoughtfully chosen accessories, completed the design with
+                    sophistication and personality.</p>
+                    <p data-translate="projectDescription4">Every detail was selected to reflect comfort, elegance, and a touch of boldness—and
+                    the result? A truly elevated family home, perfectly tailored to the lifestyle and vision of our delighted clients."</p>
+                    <p class="signature" data-translate="signature">— Ingrid Bergman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Restaurant Project Description Popup -->
+    <div class="project-description-popup restaurant-description">
+        <div class="project-description-content">
+            <button class="close-project-description">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-description-grid">
+                <div class="project-description-image">
+                    <img src="images/grill/Grill 445-1.jpg" alt="Restaurant Project" loading="lazy">
+                </div>
+                <div class="project-description-text">
+                    <h3 data-translate="restaurantProjectTitle">A Bold New Restaurant Concept with Heart</h3>
+                    <p data-translate="restaurantProjectDescription1">"We had the opportunity to collaborate with an experienced American restaurateur on an exciting new venture: a pub-style restaurant concept with a family-friendly twist. The vision was clear—create a space where you could grab a great steak or burger in a laid-back, stylish setting that welcomes everyone.</p>
+                    <p data-translate="restaurantProjectDescription2">From concept to completion, we were involved every step of the way. The standout feature? A stunning 35-meter-long natural stone bar that immediately draws attention and anchors the entire space. Every detail was carefully curated—from material selections and color palettes to the rich flooring textures, statement lighting, and luxurious custom booths designed to comfortably seat groups of up to 8.</p>
+                    <p data-translate="restaurantProjectDescription3">This project wasn't just about aesthetics—it was about atmosphere. The result is a warm, inviting, and elevated dining experience that feels both timeless and fresh."</p>
+                    <p class="signature" data-translate="signature">— Ingrid Bergman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ibiza Project Description Popup -->
+    <div class="project-description-popup ibiza-description">
+        <div class="project-description-content">
+            <button class="close-project-description">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-description-grid">
+                <div class="project-description-image">
+                    <img src="images/ibiza/Ibiza 5.jpg" alt="Ibiza Project" loading="lazy">
+                </div>
+                <div class="project-description-text">
+                    <h3>Ibiza the magical island</h3>
+                    <p>"In Ibiza, we redesigned a beautiful home that captures the island's unique blend of energy and serenity. The interiors feature soft, natural tones that reflect the sunlight and harmonize with the surrounding landscape. We selected sophisticated materials — including organic linens, natural stone, warm wood, and handcrafted details — to bring authenticity and elegance to the space.</p>
+                    <p>The furniture combines relaxed comfort with contemporary design, creating an inviting atmosphere that flows effortlessly between indoor and outdoor living. The result is a stylish, tranquil retreat that celebrates the essence of Ibiza's coastal lifestyle."</p>
+                    <p class="signature">— Ingrid Bergman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spain Project Description Popup -->
+    <div class="project-description-popup spain-description">
+        <div class="project-description-content">
+            <button class="close-project-description">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-description-grid">
+                <div class="project-description-image">
+                    <img src="images/spain/Spain 4.jpg" alt="Spain Project" loading="lazy">
+                </div>
+                <div class="project-description-text">
+                    <h3>Apartment upon in the Hills</h3>
+                    <p>"In Altea, Spain, we completed a stunning interior transformation of an apartment overlooking the Mediterranean Sea. The design embraces a soft, light color palette that enhances the natural brightness and frames the breathtaking sea views. We chose sophisticated materials — including elegant fabrics, refined wood finishes, and subtle stone details — to create a sense of timeless comfort.</p>
+                    <p>The furniture features clean, contemporary lines with a focus on quality and exceptional comfort, complementing the airy, open feel of the space. The result is a serene, elegant home that blends modern style with the relaxed spirit of coastal living."</p>
+                    <p class="signature">— Ingrid Bergman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Family Mansion Project Description Popup -->
+    <div class="project-description-popup family-mansion-description">
+        <div class="project-description-content">
+            <button class="close-project-description">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-description-grid">
+                <div class="project-description-image">
+                    <img src="images/project Family mansion coming soon.jpg" alt="Family Mansion Project" loading="lazy">
+                </div>
+                <div class="project-description-text">
+                    <h3>Family Mansion – USA</h3>
+                    <p>"Hidden among the serene woodlands of Tulsa, Oklahoma, this breathtaking 650 m² family mansion is designed to blend luxury, comfort, and nature. A true dream home where modern living meets warm, timeless design."</p>
+                    <p class="project-launch"><strong>Launching Spring 2026</strong></p>
+                    <p class="signature">— Ingrid Bergman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Algarve Villa Project Description Popup -->
+    <div class="project-description-popup algarve-villa-description">
+        <div class="project-description-content">
+            <button class="close-project-description">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-description-grid">
+                <div class="project-description-image">
+                    <img src="images/project Algarve Villa coming soon.jpg" alt="Algarve Villa Project" loading="lazy">
+                </div>
+                <div class="project-description-text">
+                    <h3>Algarve Villa – Portugal</h3>
+                    <p>"Perched on the sun-kissed hills of Boliqueime, this bright Algarve villa undergoes a complete transformation — from a classic residence into a contemporary modern retreat. A celebration of light, elegance, and southern Algarve charm."</p>
+                    <p class="project-launch"><strong>Launching Spring 2026</strong></p>
+                    <p class="signature">— Ingrid Bergman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brands Section - Integrated from the-brands.html -->
+    <div class="brands-section">
+        <div class="brands-background" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/the brands.jpg') center/cover no-repeat;"></div>
+        <button class="close-brands">
+            <div class="close-icon"></div>
+        </button>
+        <div class="brands-content">
+            <header class="brands-header">
+                <h2 data-translate="brandsTitle">The Brands</h2>
+                <p class="brands-subtitle" data-translate="brandsSubtitle">We carry the most exclusive brands for any project for any client for any budget</p>
+            </header>
+            
+            <section class="brands-showcase">
+                <div class="brands-category">
+                    <h3 data-translate="outdoorCollections">Outdoor Collections</h3>
+                    <div class="brands-list">
+                        <div class="brand-item">
+                            <img src="images/todo bien.jpg" alt="Todo Bien" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Todo Bien</h3>
+                            <a href="https://www.todobien.nl" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/Fjaka website picture.JPG" alt="Fjaka Furniture" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Fjaka Furniture</h3>
+                            <a href="https://fjakafurniture.com" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/bryck.jpg" alt="Bryck" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Bryck</h3>
+                            <a href="https://www.bryck.nl" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/coco wolf1.jpg" alt="Coco Wolf" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Coco Wolf</h3>
+                            <a href="https://www.cocowolf.co.uk" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/Borek picture for website.jpg" alt="Borek" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Borek</h3>
+                            <a href="https://www.borek.eu" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/cape umbrellas.jpg" alt="Cape Umbrellas" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Cape Umbrellas</h3>
+                            <a href="https://www.capeumbrellas.com" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/t_1678357783902.jpg" alt="C&C Milano" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">C&C Milano Outdoor</h3>
+                            <a href="https://www.cec-milano.uk" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/eichholtz.jpg" alt="Eichholtz" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Eichholtz</h3>
+                            <a href="https://www.eichholtz.com/en/collection/outdoor.html" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/SPB_BQ_Beach_Villa_Bonaire_2019_GB_048.jpg" alt="Piet Boon" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Piet Boon</h3>
+                            <a href="https://pietboon.com/" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brands-category">
+                    <h3 data-translate="indoorCollections">Indoor Collections</h3>
+                    <div class="brands-list">
+                        <div class="brand-item">
+                            <img src="images/kuster.jpg" alt="Eric Kuster" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Eric Kuster</h3>
+                            <a href="https://www.erickuster.com" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/shadesbyeric.webp" alt="Shades by Eric Kuster" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Shades by Eric Kuster</h3>
+                            <a href="https://shadesbyerickuster.com" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/Hamilton Conte for website.jpg" alt="Hamilton Conte" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Hamilton Conte</h3>
+                            <a href="https://hamiltonconte.com" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/pavoni.jpeg" alt="Pavoni Leathers" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Pavoni Leathers</h3>
+                            <a href="https://pavoni.com" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+
+                        <div class="brand-item">
+                            <img src="images/C&C Milano picture for website.jpg" alt="C&C Milano" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">C&C Milano</h3>
+                            <a href="https://www.cec-milano.uk" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/DREAM DETAIL.jpg" alt="STOUT Lighting" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">STOUT Lighting</h3>
+                            <a href="https://www.stoutverlichting.nl/en/" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/SPB_NL_Urban_Apartment_TB_21-003 (1).jpg" alt="Piet Boon" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Piet Boon</h3>
+                            <a href="https://pietboon.com/" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/Linteloo Bisou, Claude S07.jpg" alt="Linteloo" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Linteloo</h3>
+                            <a href="https://linteloo.com/brand/" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                        
+                        <div class="brand-item">
+                            <img src="images/CappelenDimyr_Villa Il Palazzetto_Matteo Capirola_1.jpg" alt="Cappelen Dimyr Rugs" class="brand-image" loading="lazy">
+                            <h3 class="brand-name">Cappelen Dimyr Rugs</h3>
+                            <a href="https://cappelendimyr.com/?srsltid=AfmBOopQIKQEAwt5dE8dcehT9p8fLbl0ui-Pef9AdvojXvw01e2ITAVR" target="_blank" class="brand-link" data-translate="visitWebsite">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Video Collections Section -->
+            <section class="video-collections-section">
+                <div class="brands-category" style="text-align: center;">
+                    <h3 data-translate="videoCollections">Video Collections</h3>
+                    <div class="video-content">
+                        <div class="video-container">
+                            <div class="luxury-video-wrapper">
+                                <div class="video-title-overlay" data-translate="videoTitle">EKML Headquaters Amsterdam</div>
+                                <div style="padding:56.25% 0 0 0;position:relative;">
+                                    <iframe data-src="https://player.vimeo.com/video/1080828130?h=15c700e97c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="EKML Headquaters Amsterdam" loading="lazy"></iframe>
+                                </div>
+                                <script defer src="https://player.vimeo.com/api/player.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="brands-actions">
+                <button class="brands-back-home-btn" data-translate="returnHome">Return to Homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section - New popup section -->
+    <div class="contact-section">
+        <div class="contact-background" style="background: linear-gradient(135deg, rgba(99, 94, 83, 0.98) 0%, rgba(74, 70, 64, 0.99) 100%), url('images/contact-bg.jpg') center/cover no-repeat;"></div>
+        <button class="close-contact">
+            <div class="close-icon"></div>
+        </button>
+        <div class="contact-content">
+            <header class="contact-header">
+                <h2 data-translate="contactTitle">Contact Us</h2>
+                <p data-translate="contactDescription">Get in touch with our team to discuss how we can transform your space into a stunning, functional design that reflects your unique style and needs.</p>
+            </header>
+            
+            <div class="contact-form">
+                <h3 data-translate="contactTitle">Contact Us</h3>
+                <p data-translate="contactDescription">Get in touch with our team to discuss how we can transform your space into a stunning, functional design that reflects your unique style and needs.</p>
+                <form id="contactForm" class="contact-form" action="https://formspree.io/f/xqaqbepg" method="POST">
+                    <div class="form-group">
+                        <label for="name" data-translate="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" data-translate="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" data-translate="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-translate="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" data-translate="sendMessage" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3 data-translate="ourOffice">Our Office</h3>
+                        <p data-translate="address">Ingrid Bergman Interiors<br>Rua Fernão Lopes 279<br>Albufeira, Portugal</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3 data-translate="emailUs">Email Us</h3>
+                        <p>
+                            <a href="mailto:ingrid@ingridbergmaninteriors.com">ingrid@ingridbergmaninteriors.com</a><br>
+                            <a href="mailto:ingrid@erickuster.com">ingrid@erickuster.com</a>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3 data-translate="callUs">Call Us</h3>
+                        <p>
+                            Portugal: <a href="tel:+351963486962">+351 963 486 962</a><br>
+                            Netherlands: <a href="tel:+31640180249">+31 6 401 80 249</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-actions">
+                <button class="contact-back-home-btn" data-translate="returnHome">Return to Homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/ingridbergman/" class="social-link" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/ingrid_bergman_collections/" class="social-link" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:ingrid@ingridbergmaninteriors.com" class="social-link" aria-label="Email">
+                <i class="far fa-envelope"></i>
+            </a>
+        </div>
+        <button class="contact-btn" data-section="contact" data-translate="contactButton">Contact Us</button>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="en">En</button>
+            <span class="lang-separator">|</span>
+            <button class="lang-btn" data-lang="pt">Pt</button>
+        </div>
+    </footer>
+
+    <!-- Language Transition Overlay -->
+    <div class="language-transition-overlay"></div>
+
+    <!-- Off Canvas Navigation - Side Panel -->
+    <div class="off-canvas-overlay" id="offCanvasOverlay"></div>
+    <nav class="off-canvas-navigation" id="offCanvasNav">
+        <div class="off-canvas-header">
+            <div class="off-canvas-logo">
+                <img src="images/logo white i.png" alt="Logo">
+            </div>
+            <div class="off-canvas-title" data-translate="companyName">Ingrid Bergman Interiors</div>
+            <p data-translate="explore">Explore our world of luxury design</p>
+        </div>
+        <div class="off-canvas-content">
+            <div class="off-canvas-menu">
+                <a href="javascript:void(0);" class="off-canvas-menu-item active" data-section="home" data-translate="home">Home</a>
+                <a href="javascript:void(0);" class="off-canvas-menu-item" data-section="person" data-translate="person">The Person</a>
+                <a href="javascript:void(0);" class="off-canvas-menu-item" data-section="service" data-translate="service">The Service</a>
+                <a href="javascript:void(0);" class="off-canvas-menu-item" data-section="brands" data-translate="brands">The Brands</a>
+                <a href="javascript:void(0);" class="off-canvas-menu-item" data-section="contact" data-translate="contact">Contact Us</a>
+            </div>
+        </div>
+        <div class="off-canvas-footer">
+            <a href="https://www.linkedin.com/in/ingridbergman/" class="off-canvas-social" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/ingrid_bergman_collections/" class="off-canvas-social" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:ingrid@ingridbergmaninteriors.com" class="off-canvas-social" aria-label="Email">
+                <i class="far fa-envelope"></i>
+            </a>
+        </div>
+        <div class="off-canvas-credit">
+            <a href="https://cutstudios.pt" target="_blank" rel="noopener" class="credit-link">
+                <span class="credit-text">website by</span>
+                <img src="images/logo creme site png.png" alt="Cut Studios" class="credit-logo">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Scripts - loader first, others deferred -->
+    <script src="js/loader.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/page-transitions.js" defer></script>
+    <script src="js/contact.js" defer></script>
+    <script src="js/translations.js" defer></script>
+    <script src="js/performance-optimizer.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(error => {
+              console.log('ServiceWorker registration failed: ', error);
+            });
+        });
+      }
+    </script>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal">
+        <div class="gallery-container">
+            <button class="close-gallery">
+                <i class="fas fa-times"></i>
+            </button>
+            <!-- California Project Slides -->
+            <div class="gallery-slide active">
+                <img src="images/cali project/IBICali2019-351.jpg" alt="California Home Project - Interior Detail">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-9 - Copy.jpg" alt="California Home Project - Kitchen View">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-10 - Copy - Copy.jpg" alt="California Home Project - Kitchen Details">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-12.jpg" alt="California Home Project - Hallway">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-15.jpg" alt="California Home Project - Bedroom">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-17.jpg" alt="California Home Project - Bathroom">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-42.jpg" alt="California Home Project - Outdoor Space">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-43.jpg" alt="California Home Project - Pool Area">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-441.jpg" alt="California Home Project - Exterior">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-26.jpg" alt="California Home Project - Living Space">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-29.jpg" alt="California Home Project - Sitting Area">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-30.jpg" alt="California Home Project - Main View">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-33.jpg" alt="California Home Project - Kitchen">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-1 - Copy - Copy.jpg" alt="California Home Project - Entry">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-4.jpg" alt="California Home Project - Living Area">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-39.jpg" alt="California Home Project - Bedroom View">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-40.jpg" alt="California Home Project - Bathroom Details">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-71.jpg" alt="California Home Project - Garden View">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-5.jpg" alt="California Home Project - Living Room Details">
+            </div>
+            <div class="gallery-slide">
+                <img src="images/cali project/IBICali2019-6.jpg" alt="California Home Project - Dining Area">
+            </div>
+
+            <!-- Restaurant Project Slides -->
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-1.jpg" alt="Restaurant Project - Main View">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-3.jpg" alt="Restaurant Project - Interior Detail">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-5.jpg" alt="Restaurant Project - Dining Area">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-8.jpg" alt="Restaurant Project - Bar Area">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-9.jpg" alt="Restaurant Project - Seating Area">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-11.jpg" alt="Restaurant Project - Interior View">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-12.jpg" alt="Restaurant Project - Design Detail">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-13.jpg" alt="Restaurant Project - Space Overview">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-16.jpg" alt="Restaurant Project - Interior Element">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-18.jpg" alt="Restaurant Project - Design Feature">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-19.jpg" alt="Restaurant Project - Space Detail">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-23.jpg" alt="Restaurant Project - Interior View">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-24.jpg" alt="Restaurant Project - Design Element">
+            </div>
+            <div class="gallery-slide restaurant-slide">
+                <img src="images/grill/Grill 445-26.jpg" alt="Restaurant Project - Final View">
+            </div>
+
+            <!-- Ibiza Project Slides -->
+            <div class="gallery-slide ibiza-slide">
+                <img src="images/ibiza/Ibiza.jpg" alt="Project Ibiza - Main View">
+            </div>
+            <div class="gallery-slide ibiza-slide">
+                <img src="images/ibiza/Ibiza 2.jpg" alt="Project Ibiza - Interior Detail">
+            </div>
+            <div class="gallery-slide ibiza-slide">
+                <img src="images/ibiza/Ibiza 3.jpg" alt="Project Ibiza - Design Element">
+            </div>
+            <div class="gallery-slide ibiza-slide">
+                <img src="images/ibiza/Ibiza 4.jpg" alt="Project Ibiza - Space Overview">
+            </div>
+            <div class="gallery-slide ibiza-slide">
+                <img src="images/ibiza/Ibiza 5.jpg" alt="Project Ibiza - Final View">
+            </div>
+
+            <!-- Spain Project Slides -->
+            <div class="gallery-slide spain-slide">
+                <img src="images/spain/Spain.jpg" alt="Project Spain - Main View">
+            </div>
+            <div class="gallery-slide spain-slide">
+                <img src="images/spain/Spain 2.jpg" alt="Project Spain - Interior Detail">
+            </div>
+            <div class="gallery-slide spain-slide">
+                <img src="images/spain/Spain 3.jpg" alt="Project Spain - Design Element">
+            </div>
+            <div class="gallery-slide spain-slide">
+                <img src="images/spain/Spain 4.jpg" alt="Project Spain - Featured View">
+            </div>
+
+            <div class="gallery-controls">
+                <button class="gallery-prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-counter">1 / 34</div>
+        </div>
+    </div>
+</body>
+</html>

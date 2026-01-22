@@ -1,0 +1,16 @@
+{
+  "name": "Ingrid Bergman Interiors",
+  "short_name": "IB Interiors",
+  "description": "Premium interior design solutions. Transform your space with bespoke, elegant design.",
+  "start_url": "/",
+  "background_color": "#fdfdfd",
+  "theme_color": "#a19c90",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "images/logo white i.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+} 
